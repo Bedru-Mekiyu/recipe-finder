@@ -92,7 +92,9 @@ Copy code
 🧑‍💻 Author
 👋 Bedru Mekiyu
 Frontend Developer passionate about clean UI & UX ✨
-Portfolio • LinkedIn • GitHub:https://github.com/Bedru-Mekiyu/
+Portfolio
+• LinkedIn
+• GitHub:https://github.com/Bedru-Mekiyu/
 
 🪪 License
 This project is licensed under the MIT License – feel free to use and modify.
