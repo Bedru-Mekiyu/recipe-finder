@@ -1,102 +1,144 @@
 # 🍳 Recipe Finder
 
-> A beautiful and interactive recipe search app built with **React**, **Vite**, and **Tailwind CSS 4** — featuring smooth animations, a modern UI, and a clean code structure.
+A modern, responsive web application for discovering recipes from around the world, built with **React 19**, **Vite**, **Tailwind CSS 4**, and **Framer Motion**.
 
-![Recipe Finder Banner](https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200)
-
----
-
-## 🚀 Features
-
-✨ **Search Recipes** – Filter by name or ingredient  
-🖼️ **Recipe Cards** – Stunning responsive grid layout  
-💬 **Modal View** – Detailed ingredient & step-by-step view  
-💖 **Favorites** – Save and toggle your favorite recipes  
-🎨 **Modern Design** – Tailwind CSS 4, Framer Motion animations  
-⚡ **Fast Build** – Powered by Vite for instant hot reloads  
+[![CI](https://github.com/Bedru-Mekiyu/recipe-finder/actions/workflows/ci.yml/badge.svg)](https://github.com/Bedru-Mekiyu/recipe-finder/actions/workflows/ci.yml)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ---
 
-## 🧠 Tech Stack
+## 📌 Table of Contents
+
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Available Scripts](#-available-scripts)
+- [API Reference](#-api-reference)
+- [Continuous Integration](#-continuous-integration)
+- [License](#-license)
+
+---
+
+## 🔍 Overview
+
+**Recipe Finder** allows users to search for culinary recipes in real time using external meal data. The application features search debouncing and request cancellation to minimize unnecessary API calls, smooth modal interactions for detailed recipe views, and custom light/dark theme support with local storage persistence.
+
+---
+
+## ✨ Key Features
+
+- 🔎 **Real-Time Recipe Search** — Search recipes by name or ingredient with automatic debouncing (400ms) and request abort controller management.
+- 📱 **Responsive Recipe Cards** — Grid layout designed to present recipe thumbnails and details cleanly across screens of all sizes.
+- 📖 **Interactive Recipe Modal** — Detailed popup displaying dynamically parsed ingredients with measurements and step-by-step preparation instructions.
+- 🌙 **Dark Mode Toggle** — Seamless switching between light and dark visual themes, persisted across browser sessions via `localStorage`.
+- 🎨 **Fluid Animations** — Micro-interactions and transition animations powered by Framer Motion.
+
+---
+
+## 🛠️ Tech Stack
 
 | Technology | Purpose |
-|-------------|----------|
-| **React 18** | Component-based UI |
-| **Vite** | Lightning-fast bundler |
-| **Tailwind CSS 4** | Modern styling |
-| **Framer Motion** | Animations |
-| **Lucide React** | Beautiful SVG icons |
+| :--- | :--- |
+| **[React 19](https://react.dev/)** | Frontend UI Framework |
+| **[Vite 7](https://vitejs.dev/)** | Frontend Build Tooling & Local Server |
+| **[Tailwind CSS 4](https://tailwindcss.com/)** | Utility-First CSS Styling |
+| **[Framer Motion 12](https://www.framer.com/motion/)** | Declarative Animation Library |
+| **[ESLint 9](https://eslint.org/)** | Code Quality and Linting |
 
 ---
 
-## 🛠️ Installation & Setup
+## 📁 Project Structure
 
-```bash
-# 1️⃣ Clone the repository
-git clone https://github.com/Bedru-Mekiyu/recipe-finder.git
-
-# 2️⃣ Move into the project folder
-cd recipe-finder
-
-# 3️⃣ Install dependencies
-npm install
-
-# 4️⃣ Start the development server
-npm run dev
-Your app should now be running at 👉 http://localhost:5173
-
-📁 Folder Structure
-css
-Copy code
+```text
 recipe-finder/
-│
+├── .github/
+│   └── workflows/
+│       └── ci.yml             # GitHub Actions CI workflow
+├── public/                    # Static assets
 ├── src/
 │   ├── components/
-│   │   ├── RecipeCard.jsx
-│   │   ├── RecipeModal.jsx
-│   ├── RecipeFinder.jsx
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-│
-├── tailwind.config.js
-├── package.json
-└── README.md
-🌟 UI Preview
-Recipe Grid	Recipe Modal
+│   │   ├── RecipeCard.jsx     # Recipe grid item card component
+│   │   └── RecipeModal.jsx    # Recipe detailed modal component
+│   ├── pages/
+│   │   └── RecipeFinder.jsx   # Main page & API search implementation
+│   ├── App.jsx                # Root application wrapper
+│   ├── index.css              # Global styles & Tailwind CSS imports
+│   └── main.jsx               # React DOM entry point
+├── eslint.config.js           # ESLint flat configuration
+├── index.html                 # HTML template entry
+├── package.json               # Dependencies and npm scripts
+├── postcss.config.js          # PostCSS configuration
+├── tailwind.config.js         # Tailwind configuration
+└── vite.config.js             # Vite configuration
+```
 
-🧩 Example Recipe Data
-js
-Copy code
-{
-  id: 1,
-  title: "Garlic Butter Chicken",
-  description: "Juicy chicken cooked with garlic and butter sauce.",
-  image: "https://images.unsplash.com/photo-1604908177522-2f9a4f6a5d7f?q=80&w=600",
-  ingredients: ["Chicken thighs", "Butter", "Garlic", "Parsley"],
-  steps: [
-    "Season chicken with salt and pepper.",
-    "Cook chicken in butter and garlic.",
-    "Garnish with parsley and serve hot."
-  ]
-}
-🌈 Future Improvements
-🍔 Fetch real recipes from Spoonacular API
+---
 
-💾 Save favorites to local storage
+## 🚀 Getting Started
 
-🌙 Add light/dark theme toggle
+### Prerequisites
 
-📱 PWA support for offline access
+Ensure you have Node.js (v18 or higher) and npm installed on your machine.
 
-🧑‍💻 Author
-👋 Bedru Mekiyu
-Frontend Developer passionate about clean UI & UX ✨
-Portfolio
-• LinkedIn
-• GitHub:https://github.com/Bedru-Mekiyu/
+```bash
+node -v
+npm -v
+```
 
-🪪 License
-This project is licensed under the MIT License – feel free to use and modify.
+### Installation
 
-💡 Built with love, coffee, and React ⚛️ by Bedru Mekiyu
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Bedru-Mekiyu/recipe-finder.git
+   cd recipe-finder
+   ```
+
+2. Install project dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the local development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser at `http://localhost:5173`.
+
+---
+
+## 📜 Available Scripts
+
+In the project directory, you can run:
+
+- `npm run dev` — Launches the application in development mode with Hot Module Replacement (HMR).
+- `npm run build` — Compiles and optimizes production assets into the `dist` folder.
+- `npm run lint` — Runs ESLint to check for code formatting and potential errors.
+- `npm run preview` — Serves the production build locally for verification.
+
+---
+
+## 🌐 API Reference
+
+Recipe Finder integrates with the free **[TheMealDB API](https://www.themealdb.com/api.php)**.
+
+- **Endpoint**: `https://www.themealdb.com/api/json/v1/1/search.php?s={query}`
+- **Method**: `GET`
+- **Authentication**: None required for test key (`1`).
+
+---
+
+## ⚙️ Continuous Integration
+
+Automated testing and build validation are configured via GitHub Actions in `.github/workflows/ci.yml`. On every push and pull request targeting the `main` branch, the workflow executes:
+1. Clean dependency installation (`npm install`)
+2. Code linting (`npm run lint`)
+3. Production build (`npm run build`)
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
